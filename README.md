@@ -24,6 +24,12 @@ https://fig-memo-r18.site/
 
 https://www.dorokawa.org/review-01/
 
+https://figuephoto2.blogspot.com/search?q=R18
+
+http://ikajiji.blog.shinobi.jp/
+
+http://blog.livedoor.jp/washibaroom/
+
 # how to use
 サポートサイトに対応する.pyファイルを実行する
 
@@ -35,6 +41,7 @@ http://adultfigure.blog.jp/
 http://blog.livedoor.jp/toki_naga-r18/
 https://r18.freetime.mixh.jp/blog/category/figure/
 https://fig-memo-r18.site/
+https://figuephoto2.blogspot.com/search?q=R18
 -> py mashedpoteto.py でall
 
 
