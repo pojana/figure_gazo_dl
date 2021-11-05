@@ -22,6 +22,8 @@ https://r18.freetime.mixh.jp/blog/category/figure/
 
 https://fig-memo-r18.site/
 
+https://www.dorokawa.org/review-01/
+
 # how to use
 サポートサイトに対応する.pyファイルを実行する
 
