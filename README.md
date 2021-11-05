@@ -8,6 +8,7 @@ https://asahiwa.jp/
 http://asumanga.sakura.ne.jp/
 https://syuumie.hatenablog.com/search?q=R18
 http://senlog-r18.blog.jp/
+http://adultfigure.blog.jp/
 
 # how to use
 サポートサイトに対応する.pyファイルを実行する
@@ -16,6 +17,7 @@ http://senlog-r18.blog.jp/
 https://www.mashedpopoto.com/category/anime-figures
 https://syuumie.hatenablog.com/search?q=R18
 http://senlog-r18.blog.jp/
+http://adultfigure.blog.jp/
 -> py mashedpoteto.py でall
 
 
