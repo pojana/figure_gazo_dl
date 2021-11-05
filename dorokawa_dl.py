@@ -17,7 +17,7 @@ headers = {
 def_save_path = 'H:\\いろいろ\\figs\\'
 
 syuum_path = 'H:\\いろいろ\\figs\\泥の河のPLASTIC\\'
-moto_url = 'http://adultfigure.blog.jp/'
+moto_url = 'https://www.dorokawa.org/review-01/'
 
 
 def scrape(url, save_path):
