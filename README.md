@@ -3,11 +3,17 @@
 
 # support site
 https://www.tentaclearmada.com/figure-gallery/
+
 https://www.mashedpopoto.com/category/anime-figures
+
 https://asahiwa.jp/
+
 http://asumanga.sakura.ne.jp/
+
 https://syuumie.hatenablog.com/search?q=R18
+
 http://senlog-r18.blog.jp/
+
 http://adultfigure.blog.jp/
 
 # how to use
