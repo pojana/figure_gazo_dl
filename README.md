@@ -30,6 +30,8 @@ http://ikajiji.blog.shinobi.jp/
 
 http://blog.livedoor.jp/washibaroom/
 
+http://hobbyholic.org/tag/r18
+
 # how to use
 サポートサイトに対応する.pyファイルを実行する
 
