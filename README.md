@@ -16,6 +16,8 @@ http://senlog-r18.blog.jp/
 
 http://adultfigure.blog.jp/
 
+http://blog.livedoor.jp/toki_naga-r18/
+
 # how to use
 サポートサイトに対応する.pyファイルを実行する
 
@@ -24,6 +26,7 @@ https://www.mashedpopoto.com/category/anime-figures
 https://syuumie.hatenablog.com/search?q=R18
 http://senlog-r18.blog.jp/
 http://adultfigure.blog.jp/
+http://blog.livedoor.jp/toki_naga-r18/
 -> py mashedpoteto.py でall
 
 
