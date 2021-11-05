@@ -6,14 +6,14 @@ https://www.tentaclearmada.com/figure-gallery/
 https://www.mashedpopoto.com/category/anime-figures
 https://asahiwa.jp/
 http://asumanga.sakura.ne.jp/
-
+https://syuumie.hatenablog.com/search?q=R18
 
 # how to use
 サポートサイトに対応する.pyファイルを実行する
 
 
 https://www.mashedpopoto.com/category/anime-figures
-
+https://syuumie.hatenablog.com/search?q=R18
 -> py mashedpoteto.py でall
 
 
