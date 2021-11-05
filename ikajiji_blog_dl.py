@@ -18,6 +18,7 @@ def_save_path = 'H:\\いろいろ\\figs\\'
 
 syuum_path = 'H:\\いろいろ\\figs\\途方もなく退屈な日常\\'
 # moto_url = 'http://adultfigure.blog.jp/'
+srces_url = 'http://ikajiji.blog.shinobi.jp/%E3%83%95%E3%82%A3%E3%82%AE%E3%83%A5%E3%82%A2/%E6%A1%90%E5%B4%8E%E5%8D%83%E6%A3%98%20%E3%83%90%E3%83%8B%E3%83%BCver%20%E3%83%95%E3%82%A3%E3%82%AE%E3%83%A5%E3%82%A2%20%E5%86%99%E7%9C%9F%E6%92%AE%E5%BD%B1%20%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC'
 
 
 def scrape(url, save_path):
