@@ -32,6 +32,8 @@ http://blog.livedoor.jp/washibaroom/
 
 http://hobbyholic.org/tag/r18
 
+https://syonboriegao.wixsite.com/figroku/review
+
 # how to use
 サポートサイトに対応する.pyファイルを実行する
 
