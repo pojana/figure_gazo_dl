@@ -25,7 +25,7 @@ def scrape(url, save_path):
     r = requests.get(url, headers=headers)
     soup = BeautifulSoup(r.text, 'lxml')
 
-    title = soup.find('title').text.replace('フィギュアレビュー｜fig-memo（R18）', '')
+    title = soup.find('title').text.replace('フィギュアレビュー｜fig-memo（R18）', '').replace('レビューまとめ', '')
     title = re.sub(r'[\\|/|:|?|.|"|<|>|\|\n|]', '-', title)
     title = replace_fileName(title)
     title = title.replace('「', ' ').replace('」', '').strip()

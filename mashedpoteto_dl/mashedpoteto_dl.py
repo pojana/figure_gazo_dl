@@ -15,7 +15,7 @@ headers = {
 
 
 
-def_save_path = 'H:\\いろいろ\\figs\\mashedpoteto\\'
+def_save_path = 'H:\\いろいろ\\_downloader\\fig_down\\mashedpoteto\\'
 
 base_url = 'https://www.mashedpopoto.com'
 src_url = 'https://www.mashedpopoto.com/category/anime-figures'

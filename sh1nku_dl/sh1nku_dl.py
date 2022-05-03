@@ -16,50 +16,66 @@ headers = {
 
 def_save_path = 'H:\\いろいろ\\_downloader\\fig_down\\'
 
-syuum_path = 'H:\\いろいろ\\figs\\せんろぐ\\'
-moto_url = 'http://senlog-r18.blog.jp/'
-
+syuum_path = 'H:\\いろいろ\\_downloader\\fig_down\\sh1nku\\'
+moto_url = 'http://sh1nku.blog.fc2.com/archives.html'
+# base_url = 'http://30calclub.sakura.ne.jp/ORCHID/'
 
 def scrape(url, save_path):
 
     r = requests.get(url, headers=headers)
+    r.encoding = r.apparent_encoding
     soup = BeautifulSoup(r.text, 'lxml')
 
-    title = soup.find('title').text
+    title = soup.find('h2', class_='entry_header').text
+    title = re.sub(r'[1-9]/[1-9]', '', title).replace('　　', ' ')
     title = re.sub(r'[\\|/|:|?|.|"|<|>|\|\n|]', '-', title)
-    title = title.strip()
+    title = title.replace('　', '').strip()
     print(pathlib.Path(save_path + title))
 
     # pathlib.Path(save_path + title).mkdir(exist_ok=True)
 
-    # src_iml = soup.find("div", class_='entry-content')
-    # src_iml = src_iml.find_all('a')
+    # src_iml = soup.find_all("div", class_='EntryText')[-1]
+    entry = soup.find('div', class_='entry_body')
+    img_list = [s.get('src') for s in entry.find_all('img')]
+    
     # sentry = soup.find('div', class_='main-inner')
     # print(entry)
 
-    img_list = [i.get('src') for i in soup.find_all('img', class_="pict")]
+    # img_list = [i.get('src') for i in src_iml]
     
-    # print(len(img_list))
+    # print(img_list)
+
+    # img_base_url = url.replace(os.path.basename(url), '')
+    # img_list = [img_base_url + i for i in img_list]
 
     save_img(img_list, title=title, save_path=save_path)
 
 
 def save_img(url_list, title, save_path):
     pathlib.Path(save_path + title).mkdir(exist_ok=True)
-    
-    num = len(url_list)
+    img_list = []
 
-    for i, u in enumerate(url_list):
+    for u in url_list:
+        if u is None or '.jpg' not in u and '.png' not in u and '.JPG' not in u:
+            # print('pass: {}'.format(u))
+            continue
+        else:
+            img_list.append(u)
+    
+    num = len(img_list)
+    # print(img_list)
+
+    for i, u in enumerate(img_list):
         # if u is None:
 
         u = 'https:' + u if 'http' not in u else u
-        img = requests.get(u)
+        img = requests.get(u, headers=headers)
 
         print('{} / {}  response : {} url:{}'.format(str(i + 1), str(num), str(img), str(u)))
 
         # if True:
         if 'jlist' not in u:
-            file_name = str(i + 1) + '_' + os.path.basename(u)
+            file_name = str(i + 1) + '_' + os.path.basename(u) + '.jpg'
             with open(save_path + str(title) + str('\\') + str(file_name), 'wb') as file:
                 file.write(img.content)
         else:
@@ -72,11 +88,11 @@ def get_download_page_list(url):
     soup = BeautifulSoup(r.text, 'lxml')
     # print(soup)
 
-    # src = soup.find_all('h1', class_='article-header')
+    src = soup.find('ul', class_='list_body')
     # print(src)
     # url_list = [s.find('a').get('href') for s in src]
-    url_list = [s.get('href') for s in soup.find_all('a', itemprop="url")]
-    print(url_list)
+    url_list = [s.get('href') for s in src.find_all('a')]
+    url_list = [s for s in url_list if s != 'http://sh1nku.blog.fc2.com/blog-category-0.html']
 
     next = soup.find('a', rel='next')
 
@@ -113,13 +129,11 @@ def main():
                 f = [li.rstrip() for li in f]
                 # print(f)
 
-                for i, line in enumerate(f):
-                    print('{} / {} scrape_url:{}'.format(str(i), str(len(f)), str(line)))
-                    scrape(line, save_path=save_ph)
-                    i += 1
+            download_img_from_urlList(f, save_path=syuum_path)
         else:
             print('get one url')
-            scrape(args[1], def_save_path)
+            pathlib.Path(syuum_path).mkdir(exist_ok=True)
+            scrape(args[1], syuum_path)
     else:
         print('please url or urlList.txt')
 

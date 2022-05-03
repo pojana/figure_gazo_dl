@@ -14,9 +14,9 @@ headers = {
 }
 
 
-def_save_path = 'H:\\いろいろ\\figs\\'
+def_save_path = 'H:\\いろいろ\\_downloader\\fig_down\\'
 
-syuum_path = 'H:\\いろいろ\\figs\\fig_memo_r18\\'
+syuum_path = 'H:\\いろいろ\\_downloader\\fig_down\\fig_memo_r18\\'
 moto_url = 'https://fig-memo-r18.site/'
 
 
@@ -31,12 +31,33 @@ def scrape(url, save_path):
     title = title.replace('「', ' ').replace('」', '').strip()
     print(pathlib.Path(save_path + title))
 
-    src_iml = soup.find("div", itemprop="articleBody")
-    src_iml = src_iml.find_all('img', loading="lazy")
+    src_iml = soup.find("div", class_="post_content")
+    # src_iml = src_iml.find_all('img', loading="lazy")
+
+
+    title_img = src_iml.find_all('img', class_=re.compile('^aligncenter wp-image-'))
+    src_iml = src_iml.find_all('a', {'data-rel': re.compile('.*lightbox*')})
+    
+    # src_iml = src_iml.find_all('a', data-rel=re.compile('.*lightbox*'))
+    
+    # print('{}'.format(src_iml))
+
+    if title_img is None:
+        pass
+    else:
+        img_list = [i.get('src') for i in title_img]
+
+    # 最初の画像を追加する
     # sentry = soup.find('div', class_='main-inner')
     # print(entry)
 
-    img_list = [i.get('src') for i in src_iml]
+    try:
+        iml_content = [i.get('href') for i in src_iml]
+    except AttributeError:
+        print(url)
+        print(src_iml)
+
+    img_list.extend(iml_content)
     # print(img_list)
     
     # print(len(img_list))
@@ -142,12 +163,10 @@ def main():
             with open(args[1], mode='r', encoding='utf-8') as file:
                 f = file.readlines()
                 f = [li.rstrip() for li in f]
-                # print(f)
+                print(f)
 
-                for i, line in enumerate(f):
-                    print('{} / {} scrape_url:{}'.format(str(i), str(len(f)), str(line)))
-                    scrape(line, save_path=save_ph)
-                    i += 1
+            download_img_from_urlList(f, save_path=syuum_path)
+
         else:
             print('get one url')
             pathlib.Path(syuum_path).mkdir(exist_ok=True)

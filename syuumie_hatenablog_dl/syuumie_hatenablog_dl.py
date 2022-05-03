@@ -14,9 +14,9 @@ headers = {
 }
 
 
-def_save_path = 'H:\\いろいろ\\figs\\'
+def_save_path = 'H:\\いろいろ\\_downloader\\fig_down\\'
 
-syuum_path = 'H:\\いろいろ\\figs\\楽園 フィギュア レビュー ブログ\\'
+syuum_path = 'H:\\いろいろ\\_downloader\\fig_down\\楽園 フィギュア レビュー ブログ\\'
 moto_url = 'https://syuumie.hatenablog.com/search?q=R18'
 
 

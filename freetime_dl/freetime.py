@@ -14,9 +14,9 @@ headers = {
 }
 
 
-def_save_path = 'H:\\いろいろ\\figs\\'
+def_save_path = 'H:\\いろいろ\\_downloader\\fig_down\\'
 
-syuum_path = 'H:\\いろいろ\\figs\\FREETIME\\'
+syuum_path = 'H:\\いろいろ\\_downloader\\fig_down\\'
 moto_url = 'https://r18.freetime.mixh.jp/blog/category/figure/'
 
 
@@ -111,12 +111,11 @@ def main():
             with open(args[1], mode='r', encoding='utf-8') as file:
                 f = file.readlines()
                 f = [li.rstrip() for li in f]
-                # print(f)
+                print(f)
 
-                for i, line in enumerate(f):
-                    print('{} / {} scrape_url:{}'.format(str(i), str(len(f)), str(line)))
-                    scrape(line, save_path=save_ph)
-                    i += 1
+            download_img_from_urlList(f, save_path=syuum_path)
+
+
         else:
             print('get one url')
             scrape(args[1], def_save_path)
